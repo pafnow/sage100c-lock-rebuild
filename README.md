@@ -13,7 +13,6 @@ EXEC sys.sp_set_session_context @key = N'cbLockDisable', @value = 1;
 ```
 
 ### Improvements //TODO
-* Global lock disable checking based on session variable
 * In-Memory Table for better performance
 * Natively compiled stored procedures for better performance?
 
