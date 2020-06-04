@@ -2,7 +2,7 @@
 Rebuilding the lock system of Sage 100cloud to get rid of cbsqlxp.dll
 
 ### Installation
-Just execute all the sql files in the root of this repository to create needed table and overwrite related stored procedures and functions.
+Just execute all the sql files in the root of this repository on your Sage database to create needed table and overwrite related stored procedures and functions.
 
 ### Usage
 Please refer to the Sage documentation for details on its usage.
