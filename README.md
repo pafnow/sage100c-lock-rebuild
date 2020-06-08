@@ -11,6 +11,10 @@ A feature has been added to allow bypass of lock checking (useful when doing som
 ```sql
 EXEC sys.sp_set_session_context @key = N'cbLockDisable', @value = 1;
 ```
+To revert and reactivate the lock checking:
+```sql
+EXEC sys.sp_set_session_context @key = N'cbLockDisable', @value = NULL;
+```
 
 ### Improvements //TODO
 * In-Memory Table for better performance
