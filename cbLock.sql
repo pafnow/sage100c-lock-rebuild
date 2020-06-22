@@ -9,7 +9,8 @@ CREATE TABLE [dbo].[cbLock](
 	[cbFile] [int] NOT NULL,
 	[cbType] [smallint] NOT NULL,
 	[cbMarq] [int] NOT NULL,
-	[CreatedDate] [datetime] NOT NULL
+	[CreatedDate] [datetime] NOT NULL,
+	[SystemUser] [varchar](128) NOT NULL
 ) ON [PRIMARY]
 GO
 
@@ -31,3 +32,7 @@ GO
 
 ALTER TABLE [dbo].[cbLock] ADD  CONSTRAINT [DF_cbLock_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
 GO
+ALTER TABLE [dbo].[cbLock] ADD  CONSTRAINT [DF_cbLock_SystemUser]  DEFAULT (suser_name()) FOR [SystemUser]
+GO
+
+

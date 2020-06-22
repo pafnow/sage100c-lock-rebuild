@@ -10,12 +10,17 @@ All changes are made on a specific Sage database. Therefore, multiple database o
 Please refer to the Sage documentation for details on its usage.
 
 A feature has been added to allow bypass of lock checking (useful when doing some mass updates on the database via SQL Direct). To use it, just setup a session context variable as below:
+- For all lock bypass, set value = 1
 ```sql
-EXEC sys.sp_set_session_context @key = N'cbLockDisable', @value = 1;
+EXEC sys.sp_set_session_context @key = N'cbLockBypass', @value = 1;
+```
+- For only own user lock bypass (possible when multiple SQL session are opened), set value = 2
+```sql
+EXEC sys.sp_set_session_context @key = N'cbLockBypass', @value = 2;
 ```
 To revert and reactivate the lock checking:
 ```sql
-EXEC sys.sp_set_session_context @key = N'cbLockDisable', @value = NULL;
+EXEC sys.sp_set_session_context @key = N'cbLockBypass', @value = NULL;
 ```
 
 ### Improvements //TODO
